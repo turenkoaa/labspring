@@ -3,9 +3,7 @@ import model.simple.SimpleCountry;
 import model.simple.SimplePerson;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -15,13 +13,13 @@ import static junit.framework.TestCase.assertEquals;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("application-context.xml")
-class HelloWorldTest {
+class SimplePersonAnnotationTest {
 
 	@Autowired
 	Person person;
 
 	@Test
-	public void testInitPerson() {
+	public void initPersonTest() {
 		assertEquals(getExpectedPerson(), person);
 	}
 

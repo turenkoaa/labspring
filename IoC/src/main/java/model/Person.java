@@ -10,4 +10,5 @@ public interface Person {
     float getHeight();
     boolean isProgrammer();
     List<String> getContacts();
+    void sayHello(Person person);
 }

@@ -1,23 +1,27 @@
-package model.simple;
-
-
+import junit.framework.TestCase;
+import model.simple.SimpleCountry;
+import model.simple.SimplePerson;
+import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.Arrays;
 
-import static junit.framework.TestCase.assertEquals;
 
 public class SimplePersonTest {
     private static final String APPLICATION_CONTEXT_XML_FILE_NAME = "application-context.xml";
 
-    private BeanFactory context =
-            new ClassPathXmlApplicationContext(APPLICATION_CONTEXT_XML_FILE_NAME);
+    private BeanFactory context;
+
+    @Before
+    public void setUp(){
+        context = new ClassPathXmlApplicationContext(APPLICATION_CONTEXT_XML_FILE_NAME);
+    }
 
     @Test
     public void testInitPerson() {
-        assertEquals(getExpectedPerson(), context.getBean("person"));
+        TestCase.assertEquals(getExpectedPerson(), context.getBean("person"));
     }
 
     public static SimplePerson getExpectedPerson() {

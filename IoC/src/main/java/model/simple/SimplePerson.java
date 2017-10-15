@@ -18,7 +18,7 @@ public class SimplePerson implements Person {
 
     private List<String> contacts;
 
-    private void sayHello(Person person) {
+    public void sayHello(Person person) {
         System.out.printf("Hello, %s, I`m %s!", person.getName(), getName());
     }
 }
